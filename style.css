@@ -1,0 +1,79 @@
+.contain {
+    background-image: url('/images/gitcarddd.jpg');
+    height: 100%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    padding: 20px 200px;
+    max-width: 100vw;
+    overflow: hidden;
+    font-weight: normal;
+}
+
+.heroimg {
+    object-fit: cover;
+    /* width: 100%; */
+}
+
+video {
+    height: 400px;
+    width: 100%;
+    /* object-fit: cover; */
+}
+
+.services {
+    border-top: 1px solid grey;
+    padding: 10px;
+}
+
+.services p {
+    font-size: 18px;
+    text-align: center;
+}
+a {
+    color:white;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+.next {
+    background-image: url('images/pexelscard.jpg');
+    background-size: cover;
+    padding: 10px;
+    color: white;
+    padding: 50px 10px;
+}
+
+.next p {
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+
+    .contain {
+    padding: 0 50px;
+    }
+    .heroimg {
+        object-fit: cover;
+        width: 100vw;
+    }
+
+    video {
+        height: 400px;
+        width: 100vw;
+    }
+
+    .next p {
+        font-size: 18px;
+    }
+}
+
+
+

