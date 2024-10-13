@@ -1,5 +1,5 @@
 .contain {
-    background-image: url('/images/gitcarddd.jpg');
+    background-image: url('images/gitcarddd.jpg');
     height: 100%;
     background-size: cover;
     display: flex;
